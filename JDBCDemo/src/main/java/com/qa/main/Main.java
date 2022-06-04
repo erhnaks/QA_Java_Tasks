@@ -28,7 +28,7 @@ public class Main {
 
 				switch (choice) {
 				case 1:
-					System.out.println("Enter a name, lastname, age, address and the city");
+					System.out.println("Enter a name, lastname, age, address and the city: ");
 					databaseservice.insertCustomer(new Customer(scanner.nextLine(), scanner.nextLine(),
 							Integer.parseInt(scanner.nextLine()), scanner.nextLine(), scanner.nextLine()));
 					break;
@@ -40,7 +40,8 @@ public class Main {
 					databaseservice.getCustomerById(Integer.parseInt(scanner.nextLine()));
 					break;
 				case 4:
-					System.out.println(choice);
+					System.out.println("Enter id of a customer you wished to delete: ");
+					databaseservice.deleteCustomerById(Integer.parseInt(scanner.nextLine()));
 					break;
 				case 5:
 					System.out.println(choice);

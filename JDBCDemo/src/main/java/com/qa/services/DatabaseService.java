@@ -77,10 +77,27 @@ public class DatabaseService {
 						resultset.getString("city")));
 
 			} else
-				System.out.println("Customer id record not found!" + id);
+				System.out.println("Customer id record not found!" + " " + id);
 
 		}
 		return isFound;
 	}// End of getCustomer by ID method//
+
+	// Deleting Customer from database;
+	public void deleteCustomerById(int id) throws SQLException {
+		try (Connection connection = databaseUtil.getConnection();
+				Statement statement = connection.createStatement();) {
+			int rows = statement.executeUpdate(QueryUtil.deleteCustomerByid(id));
+
+			if (rows > 0) {
+				System.out.println("Customer record deleted succesfully!");
+
+			} else {
+				System.out.println("Something went wrong can not find customer ID");
+			}
+
+		}
+
+	}// End of delete customer by id;
 
 }

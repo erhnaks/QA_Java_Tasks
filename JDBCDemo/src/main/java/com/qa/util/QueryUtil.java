@@ -14,4 +14,10 @@ public class QueryUtil {
 	public static String selectCustomerById(int id) {
 		return "SELECT * FROM customer WHERE id= " + id;
 	}
+
+	public static String deleteCustomerByid(int id) {
+		return "DELETE FROM customer WHERE id=" + id;
+	}
+
 }
+
