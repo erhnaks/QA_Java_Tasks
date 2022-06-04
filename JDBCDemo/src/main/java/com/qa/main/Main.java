@@ -44,7 +44,17 @@ public class Main {
 					databaseservice.deleteCustomerById(Integer.parseInt(scanner.nextLine()));
 					break;
 				case 5:
-					System.out.println(choice);
+					System.out.println("Enter id of a customer: ");
+					int updateID = Integer.parseInt(scanner.nextLine());
+					boolean isFound = databaseservice.getCustomerById(updateID);
+
+					if (isFound) {
+						System.out.println("Enter name, lastname, cust_age, address, city : ");
+						Customer customer = new Customer(updateID, scanner.nextLine(), scanner.nextLine(),
+								scanner.nextInt(), scanner.nextLine(), scanner.nextLine());
+						databaseservice.updateCustomer(customer);
+					}
+
 					break;
 				case 6:
 					System.out.println("Thank you for using this service! Exiting...");

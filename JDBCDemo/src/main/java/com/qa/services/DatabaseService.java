@@ -100,4 +100,28 @@ public class DatabaseService {
 
 	}// End of delete customer by id;
 
+	public void updateCustomer(Customer customer) throws SQLException {
+
+		try (Connection connection = databaseUtil.getConnection();
+				PreparedStatement preparedStatement = connection
+						.prepareStatement(QueryUtil.updateCustomerByID(customer.getId()))) {
+
+			preparedStatement.setString(1, customer.getFirstname());
+			preparedStatement.setString(2, customer.getLastname());
+			preparedStatement.setLong(3, customer.getCust_age());
+			preparedStatement.setString(4, customer.getAddress());
+			preparedStatement.setString(5, customer.getCity());
+
+			int rows = preparedStatement.executeUpdate();
+
+			if (rows > 0) {
+				System.out.println("Recors is updated succesfully.");
+			} else {
+				System.out.println("Failed to update this record!");
+			}
+
+		}
+
+	} // End of update Customer method!
+
 }

@@ -10,7 +10,7 @@ public class QueryUtil {
 	public static String selectAllCustomerQuery() {
 		return "SELECT * FROM jdbcdb.customer";
 	}
-	
+
 	public static String selectCustomerById(int id) {
 		return "SELECT * FROM customer WHERE id= " + id;
 	}
@@ -19,5 +19,7 @@ public class QueryUtil {
 		return "DELETE FROM customer WHERE id=" + id;
 	}
 
+	public static String updateCustomerByID(int id) {
+		return "UPDATE customer set firstname = ?, lastname = ?, cust_age = ?, address = ?, city = ? WHERE id = " + id;
+	}
 }
-
