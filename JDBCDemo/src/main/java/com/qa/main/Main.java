@@ -33,10 +33,11 @@ public class Main {
 							Integer.parseInt(scanner.nextLine()), scanner.nextLine(), scanner.nextLine()));
 					break;
 				case 2:
-					System.out.println(choice);
+					databaseservice.getAllCustomer();
 					break;
 				case 3:
-					System.out.println(choice);
+					System.out.println("Enter id of a customer: ");
+					databaseservice.getCustomerById(Integer.parseInt(scanner.nextLine()));
 					break;
 				case 4:
 					System.out.println(choice);

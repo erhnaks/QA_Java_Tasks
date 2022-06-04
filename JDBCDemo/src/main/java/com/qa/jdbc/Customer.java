@@ -17,6 +17,22 @@ public class Customer {
 		this.address = address;
 		this.city = city;
 	}
+	
+	
+	
+
+	public Customer(int id, String firstname, String lastname, int cust_age, String address, String city) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.cust_age = cust_age;
+		this.address = address;
+		this.city = city;
+	}
+
+
+
 
 	public int getId() {
 		return id;
