@@ -51,7 +51,7 @@ public class Main {
 					if (isFound) {
 						System.out.println("Enter name, lastname, cust_age, address, city : ");
 						Customer customer = new Customer(updateID, scanner.nextLine(), scanner.nextLine(),
-								scanner.nextInt(), scanner.nextLine(), scanner.nextLine());
+								Integer.parseInt(scanner.nextLine()), scanner.nextLine(), scanner.nextLine());
 						databaseservice.updateCustomer(customer);
 					}
 
